@@ -1,6 +1,6 @@
-/* Load publication cards from publications/*.json via publications/_index.json */
+/* Load publication cards from publications/*.json via publications/index.json */
 (function () {
-  var INDEX_URL = "publications/_index.json";
+  var INDEX_URL = "publications/index.json";
 
   function esc(text) {
     var d = document.createElement("div");
@@ -219,7 +219,7 @@
         var journalEl = document.getElementById("journal-pub-list");
         if (journalEl) {
           journalEl.innerHTML =
-            '<li class="pub-load-error">Failed to load publications. Please open the site via a local HTTP server (not file://) and check publications/_index.json.</li>';
+            '<li class="pub-load-error">Failed to load publications. Please open the site via a local HTTP server (not file://) and check publications/index.json.</li>';
         }
         updateCounts();
       });

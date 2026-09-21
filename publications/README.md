@@ -2,9 +2,11 @@
 
 One JSON file per paper in this folder. The site only shows **English** metadata (authors / title / citation). Abstracts support **en** + **zh** and follow the page language toggle.
 
+> **GitHub Pages note:** Do not name files with a leading `_` (e.g. `_index.json`). Jekyll skips those unless `.nojekyll` is present. This repo uses `index.json` / `template.json` and includes `.nojekyll`.
+
 ## Add a new paper
 
-1. Copy `_template.json` → `your-slug.json` (e.g. `liu-2024-organic.json`).
+1. Copy `template.json` → `your-slug.json` (e.g. `liu-2024-organic.json`).
 2. Fill the fields (see below). Put the cover image under `img/pubs/` and set `"image"`.
 3. Run:
 
@@ -12,7 +14,7 @@ One JSON file per paper in this folder. The site only shows **English** metadata
 python scripts/rebuild-pubs-index.py
 ```
 
-This refreshes `_index.json` (all `*.json` except `_template.json` / `_index.json`, newest year first).
+This refreshes `index.json` (all `*.json` except `template.json` / `index.json`, newest year first).
 
 4. Refresh `publications.html` (serve over `http://`, not `file://`).
 

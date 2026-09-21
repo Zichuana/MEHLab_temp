@@ -1,6 +1,6 @@
-"""Rebuild publications/_index.json from JSON files in publications/.
+"""Rebuild publications/index.json from JSON files in publications/.
 
-Scans *.json (skips _index.json and _template.json), sorts by year desc then title.
+Scans *.json (skips index.json and template.json), sorts by year desc then title.
 """
 from __future__ import annotations
 
@@ -9,8 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PUB_DIR = ROOT / "publications"
-INDEX = PUB_DIR / "_index.json"
-SKIP = {"_index.json", "_template.json"}
+INDEX = PUB_DIR / "index.json"
+SKIP = {"index.json", "template.json"}
 
 
 def main() -> None:
