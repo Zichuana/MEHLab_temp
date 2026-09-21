@@ -1,0 +1,15 @@
+{
+  "id": "gao-2024-soil-redox",
+  "type": "journal",
+  "year": 2024,
+  "authors": "A-Xiang Gao, Chuan Chen, Zi-Yu Gao, Zhi-Qiang Zhai, Peng Wang, Si-Yu Zhang*, Fang-Jie Zhao*.",
+  "title": "Soil redox status governs within-field spatial variation in microbial arsenic methylation and rice straighthead disease",
+  "citation": "The ISME Journal, 18 (2024): wrae057.",
+  "doi": "https://doi.org/10.1093/ismejo/wrae057",
+  "image": "img/pubs/gao-2024-soil-redox.jpg",
+  "abstract": {
+    "en": "Soil redox status governs within-field spatial variation in microbial arsenic methylation and rice straighthead disease.",
+    "zh": "土壤氧化还原状态调控田块内微生物砷甲基化与水稻稻曲病空间变异。"
+  },
+  "bibtex": "@article{gao2024soil,\n  title={Soil redox status governs within-field spatial variation in microbial arsenic methylation and rice straighthead disease},\n  author={Gao, A-Xiang and Chen, Chuan and Gao, Zi-Yu and Zhai, Zhi-Qiang and Wang, Peng and Zhang, Si-Yu and Zhao, Fang-Jie},\n  journal={The ISME Journal},\n  volume={18},\n  number={1},\n  pages={wrae057},\n  year={2024},\n  doi={10.1093/ismejo/wrae057}\n}"
+}

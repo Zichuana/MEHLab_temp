@@ -1,0 +1,15 @@
+{
+  "id": "zhao-2024-arsenic-coupling",
+  "type": "journal",
+  "year": 2024,
+  "authors": "Xin-Di Zhao, Zi-Yu Gao, Jingjing Peng, Konstantinos T. Konstantinidis, Si-Yu Zhang*.",
+  "title": "Various microbial taxa couple arsenic transformation to nitrogen and carbon cycling in paddy soils",
+  "citation": "Microbiome, 12 (2024): 238.",
+  "doi": "https://doi.org/10.1186/s40168-024-01952-4",
+  "image": "img/pubs/zhao-2024-arsenic-coupling.jpg",
+  "abstract": {
+    "en": "Various microbial taxa couple arsenic transformation to nitrogen and carbon cycling in paddy soils.",
+    "zh": "稻田土壤中多种微生物类群将砷转化与氮、碳循环相耦合。"
+  },
+  "bibtex": "@article{zhao2024various,\n  title={Various microbial taxa couple arsenic transformation to nitrogen and carbon cycling in paddy soils},\n  author={Zhao, Xin-Di and Gao, Zi-Yu and Peng, Jingjing and Konstantinidis, Konstantinos T. and Zhang, Si-Yu},\n  journal={Microbiome},\n  volume={12},\n  pages={238},\n  year={2024},\n  doi={10.1186/s40168-024-01952-4}\n}"
+}

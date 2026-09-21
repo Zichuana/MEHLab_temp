@@ -4,59 +4,42 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MEH Lab — 微生物组学与生态系统健康</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/simplex/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="d-flex flex-column min-vh-100" data-lang="zh" data-page="home">
 
-  <header class="site-banner">
-    <img src="img/banner.svg" alt="Banner" class="site-banner-img" />
-    <h1 class="m-0">
-      <a href="index.html" class="group-name-overlay" data-i18n="groupName">微生物组学与生态系统健康课题组</a>
-    </h1>
-    <h2 class="institution-title m-0">
-      <a href="https://www.ecnu.edu.cn/" class="institution-name-overlay" data-i18n="institution">华东师范大学</a>
-    </h2>
-  </header>
+  <div class="site-topbar">
+    <div class="site-topbar-inner">
+      <a href="index.html" class="site-brand" data-i18n="groupBrand">MEH Lab</a>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-vert">
-    <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <div class="navbar-mobile-card d-flex flex-wrap align-items-center w-100 justify-content-between gap-2">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="navHome">首页</a></li>
-            <li class="nav-item"><a class="nav-link" href="people.html" data-i18n="navPeople">成员</a></li>
-            <li class="nav-item"><a class="nav-link" href="publications.html" data-i18n="navPubs">论文</a></li>
-            <li class="nav-item"><a class="nav-link" href="software.html" data-i18n="navSoftware">软件</a></li>
-            <li class="nav-item"><a class="nav-link" href="teaching.html" data-i18n="navTeaching">教学</a></li>
-            <li class="nav-item"><a class="nav-link" href="outings.html" data-i18n="navOutings">活动</a></li>
-          </ul>
-          <div class="lang-switch" role="group" aria-label="Language">
-            <button type="button" class="lang-btn active" data-lang-set="zh">中文</button>
-            <button type="button" class="lang-btn" data-lang-set="en">EN</button>
-          </div>
+
+      <nav class="site-nav navbar-collapse collapse" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="navHome">首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="people.html" data-i18n="navPeople">成员</a></li>
+          <li class="nav-item"><a class="nav-link" href="publications.html" data-i18n="navPubs">论文</a></li>
+          <li class="nav-item"><a class="nav-link" href="software.html" data-i18n="navSoftware">软件</a></li>
+          <li class="nav-item"><a class="nav-link" href="teaching.html" data-i18n="navTeaching">教学</a></li>
+          <li class="nav-item"><a class="nav-link" href="outings.html" data-i18n="navOutings">活动</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-topbar-lang">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang-set="zh">中文</button>
+          <button type="button" class="lang-btn" data-lang-set="en">EN</button>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 
-  <!-- Full-width group photo (方案 1) -->
   <section class="group-hero" aria-label="Group photo">
-    <div class="group-hero-frame">
-      <img
-        src="img/group.jpg"
-        alt="MEH Lab group photo"
-        class="group-hero-img"
-        width="1600"
-        height="640"
-        onerror="this.onerror=null;this.src='img/group.svg'"
-      />
-    </div>
+    <div class="group-hero-banner" role="img" aria-label="MEH Lab group photo"></div>
   </section>
 
   <main class="container page-main">

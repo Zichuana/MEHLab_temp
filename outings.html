@@ -4,68 +4,65 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>活动 — MEH Lab</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/simplex/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="d-flex flex-column min-vh-100" data-lang="zh" data-page="outings">
 
-  <header class="site-banner">
-    <img src="img/banner.svg" alt="Banner" class="site-banner-img" />
-    <h1 class="m-0">
-      <a href="index.html" class="group-name-overlay" data-i18n="groupName">微生物组学与生态系统健康课题组</a>
-    </h1>
-    <h2 class="institution-title m-0">
-      <a href="https://www.ecnu.edu.cn/" class="institution-name-overlay" data-i18n="institution">华东师范大学</a>
-    </h2>
-  </header>
+  <div class="site-topbar">
+    <div class="site-topbar-inner">
+      <a href="index.html" class="site-brand" data-i18n="groupBrand">MEH Lab</a>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-vert">
-    <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <div class="navbar-mobile-card d-flex flex-wrap align-items-center w-100 justify-content-between gap-2">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="navHome">首页</a></li>
-            <li class="nav-item"><a class="nav-link" href="people.html" data-i18n="navPeople">成员</a></li>
-            <li class="nav-item"><a class="nav-link" href="publications.html" data-i18n="navPubs">论文</a></li>
-            <li class="nav-item"><a class="nav-link" href="software.html" data-i18n="navSoftware">软件</a></li>
-            <li class="nav-item"><a class="nav-link" href="teaching.html" data-i18n="navTeaching">教学</a></li>
-            <li class="nav-item"><a class="nav-link active" href="outings.html" data-i18n="navOutings">活动</a></li>
-          </ul>
-          <div class="lang-switch" role="group" aria-label="Language">
-            <button type="button" class="lang-btn active" data-lang-set="zh">中文</button>
-            <button type="button" class="lang-btn" data-lang-set="en">EN</button>
-          </div>
+
+      <nav class="site-nav navbar-collapse collapse" id="mainNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="navHome">首页</a></li>
+          <li class="nav-item"><a class="nav-link" href="people.html" data-i18n="navPeople">成员</a></li>
+          <li class="nav-item"><a class="nav-link" href="publications.html" data-i18n="navPubs">论文</a></li>
+          <li class="nav-item"><a class="nav-link" href="software.html" data-i18n="navSoftware">软件</a></li>
+          <li class="nav-item"><a class="nav-link" href="teaching.html" data-i18n="navTeaching">教学</a></li>
+          <li class="nav-item"><a class="nav-link active" href="outings.html" data-i18n="navOutings">活动</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-topbar-lang">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang-set="zh">中文</button>
+          <button type="button" class="lang-btn" data-lang-set="en">EN</button>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 
   <main class="container page-main">
-    <h2 class="section-title person-section-title" data-i18n="outingsTitle">课题组活动</h2>
-    <p class="page-lead" data-i18n="outingsLead">组会、出游与集体活动（可后续补充照片）。</p>
+    <h2 class="section-title" data-i18n="outingsTitle">课题组活动</h2>
 
-    <div class="content-list">
-      <article class="content-card outing-card">
-        <div class="outing-photo-placeholder" data-i18n="photoPlaceholder">照片</div>
-        <div>
-          <p class="outing-date">2026</p>
-          <h3 data-i18n="outing1Title">上海迪士尼</h3>
-          <p data-i18n="outing1Desc">课题组集体出游。</p>
+    <div class="outing-gallery">
+      <figure class="outing-shot">
+        <div class="outing-photo">
+          <img src="img/outings/disney-2026.jpg" alt="" onerror="this.remove()" />
+          <span class="outing-photo-fallback" data-i18n="photoPlaceholder">照片</span>
         </div>
-      </article>
-      <article class="content-card outing-card">
-        <div class="outing-photo-placeholder" data-i18n="photoPlaceholder">照片</div>
-        <div>
-          <p class="outing-date">2025</p>
-          <h3 data-i18n="outing2Title">跨年组会</h3>
-          <p data-i18n="outing2Desc">年度总结与跨年组会。</p>
+        <figcaption class="outing-caption">
+          <span class="outing-date">2026</span>
+          <span class="outing-name" data-i18n="outing1Title">上海迪士尼</span>
+        </figcaption>
+      </figure>
+
+      <figure class="outing-shot">
+        <div class="outing-photo">
+          <img src="img/outings/newyear-2025.jpg" alt="" onerror="this.remove()" />
+          <span class="outing-photo-fallback" data-i18n="photoPlaceholder">照片</span>
         </div>
-      </article>
+        <figcaption class="outing-caption">
+          <span class="outing-date">2025</span>
+          <span class="outing-name" data-i18n="outing2Title">跨年组会</span>
+        </figcaption>
+      </figure>
     </div>
   </main>
 
@@ -75,6 +72,19 @@
         <a href="https://www.ecnu.edu.cn/" class="footer-logo-text" data-i18n="footerUniv">华东师范大学</a>
         <a href="https://sees.ecnu.edu.cn/" class="footer-logo-text" data-i18n="footerSchool">生态与环境科学学院</a>
         <span class="footer-logo-text">MEH Lab</span>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 footer-contact-block">
+          <h5 data-i18n="piName">张思宇</h5>
+          <p class="role" data-i18n="piTitle">教授（紫江青年学者）</p>
+          <p><span class="contact-icon">✉️</span> syzhang@des.ecnu.edu.cn</p>
+          <p><span class="contact-icon">📍</span> <span data-i18n="piOffice">闵行校区资环楼 219</span></p>
+        </div>
+        <div class="col-md-6 footer-contact-block">
+          <h5 data-i18n="footerLab">MEH Lab</h5>
+          <p class="role" data-i18n="piLabShort">微生物组学与生态系统健康</p>
+          <p><span class="contact-icon">📍</span> <span data-i18n="piAddress">上海市闵行区东川路 500 号（邮编 200241）</span></p>
+        </div>
       </div>
     </div>
   </footer>

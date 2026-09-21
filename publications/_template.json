@@ -1,0 +1,15 @@
+{
+  "id": "example-2024-paper-slug",
+  "type": "journal",
+  "year": 2024,
+  "authors": "First Author, Second Author, Si-Yu Zhang*.",
+  "title": "English title of the paper goes here",
+  "citation": "Journal Name, 12 (2024): 123–145.",
+  "doi": "https://doi.org/10.xxxx/xxxxx",
+  "image": "img/pubs/example-2024.jpg",
+  "abstract": {
+    "en": "English abstract paragraph.",
+    "zh": "中文摘要段落。"
+  },
+  "bibtex": "@article{example2024,\n  title={English title of the paper goes here},\n  author={Author, First and Author, Second and Zhang, Si-Yu},\n  journal={Journal Name},\n  year={2024}\n}"
+}
