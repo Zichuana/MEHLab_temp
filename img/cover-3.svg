@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="200" viewBox="0 0 160 200">
+  <rect width="160" height="200" fill="#2f4a3c"/>
+  <text x="80" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e8f0ea">Mathematics</text>
+  <text x="80" y="92" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e8f0ea">of</text>
+  <text x="80" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#e8f0ea">Computation</text>
+  <line x1="40" y1="130" x2="120" y2="130" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+  <text x="80" y="155" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#b7cfc0">2022</text>
+</svg>
