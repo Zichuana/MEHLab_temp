@@ -15,6 +15,17 @@ Reads Google Scholar / EndNote tagged (`.enw`) files. Writes
 - Duplicate titles in the same run are skipped.
 - Does **not** rebuild `index.json` (run `rebuild_index.py` separately when ready).
 
+## Fill DOIs (interactive)
+
+```powershell
+python tools/fill_dois.py
+python tools/fill_dois.py --skip-filled
+```
+
+Walks `publications/index.json` in order. Paste a bare DOI such as
+`10.1021/envhealth.6c00303`; it is written as `https://doi.org/...` in that
+paper’s JSON. Empty line skips; `:quit` stops.
+
 ## Rebuild index only
 
 ```powershell
