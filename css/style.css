@@ -1,19 +1,19 @@
-/* MEH Lab — palette: #000000 #14213d #fca311 #e5e5e5 #ffffff */
-/* https://coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff */
+/* MEH Lab — palette: #E8133D #FFFFFF #071F36 #FFE433 */
 
 :root {
-  --charcoal: #000000;
-  --teal: #fca311;
+  --charcoal: #071F36;
+  --teal: #E8133D;
+  --gold: #FFE433;
   --white: #ffffff;
   --silver: #e5e5e5;
-  --ocean: #14213d;
-  --accent: var(--teal);
-  --accent-hover: var(--ocean);
-  --text: var(--charcoal);
+  --ocean: #071F36;
+  --accent: #E8133D;
+  --accent-hover: #071F36;
+  --text: #071F36;
   --muted: #5c6578;
   --border: #d0d0d0;
   --surface: #f4f4f4;
-  --footer-bg: var(--ocean);
+  --footer-bg: #071F36;
   --bs-body-bg: var(--white);
   --bs-body-color: var(--charcoal);
   --bs-secondary-bg: var(--silver);
@@ -71,6 +71,7 @@ a:hover {
   color: #ffffff;
   font-size: clamp(1.375rem, 2.571vw, 1.625rem);
   font-weight: 700;
+  font-style: italic;
   letter-spacing: 0.02em;
   text-decoration: none;
   white-space: nowrap;
@@ -84,15 +85,31 @@ a:hover {
 }
 
 .site-topbar .navbar-toggler {
+  display: none;
   justify-self: end;
-  border-color: rgba(255, 255, 255, 0.35);
-  padding: 0.35rem 0.5rem;
-  order: 3;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.site-topbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(232, 19, 61, 0.35);
 }
 
 .site-topbar .navbar-toggler-icon {
-  filter: invert(1);
-  opacity: 0.9;
+  display: block;
+  width: 1.35rem;
+  height: 2px;
+  background: #ffffff;
+  box-shadow: 0 -6px 0 #ffffff, 0 6px 0 #ffffff;
+  opacity: 1;
+  filter: none;
 }
 
 .site-nav {
@@ -135,20 +152,22 @@ a:hover {
 
 @media (max-width: 991px) {
   .site-topbar-inner {
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     grid-template-areas:
       "brand lang toggler"
       "nav nav nav";
+    gap: 0.55rem 0.75rem;
   }
 
   .site-brand {
     grid-area: brand;
-    white-space: normal;
+    white-space: nowrap;
+    font-size: 1.35rem;
   }
 
   .site-topbar .navbar-toggler {
     grid-area: toggler;
-    display: block;
+    display: inline-flex !important;
   }
 
   .site-topbar-lang {
@@ -164,41 +183,56 @@ a:hover {
   }
 
   .site-nav.collapse:not(.show) {
-    display: none;
+    display: none !important;
   }
 
   .site-nav.collapse.show,
   .site-nav.collapsing {
-    display: block;
+    display: block !important;
   }
 
   .site-nav .navbar-nav {
     flex-direction: column;
     align-items: stretch;
+    gap: 0;
     background: #ffffff;
     border-radius: 6px;
-    padding: 0.5rem 0.75rem;
-    margin-top: 0.35rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    padding: 0.35rem 0;
+    margin: 0;
+    box-shadow: 0 8px 24px rgba(7, 31, 54, 0.22);
+  }
+
+  .site-nav .nav-item + .nav-item {
+    border-top: 1px solid var(--border);
   }
 
   .site-nav .nav-link {
-    color: var(--charcoal) !important;
-    padding: 0.55rem 0.35rem !important;
+    color: var(--ocean) !important;
+    font-size: var(--fs-md);
+    padding: 0.85rem 1rem !important;
+  }
+
+  .site-nav .nav-link:hover,
+  .site-nav .nav-link:focus {
+    color: var(--accent) !important;
+    background: var(--surface);
   }
 
   .site-nav .nav-link.active {
-    color: var(--teal) !important;
+    color: var(--accent) !important;
+    font-weight: 700;
   }
 }
 
 @media (min-width: 992px) {
   .site-topbar .navbar-toggler {
-    display: none;
+    display: none !important;
   }
 
   .site-nav.collapse {
     display: block !important;
+    height: auto !important;
+    visibility: visible !important;
   }
 }
 
@@ -227,7 +261,7 @@ a:hover {
   top: 1.15rem;
   right: -1.15rem;
   bottom: -1.15rem;
-  background: var(--ocean);
+  background: var(--gold);
 }
 
 .group-hero-photo {
@@ -573,14 +607,34 @@ a:hover {
 }
 
 @media (max-width: 991px) {
+  .home-intro {
+    padding: 1.75rem 0 0;
+  }
+
   .home-intro-grid,
   .home-duo-grid,
   .home-close-grid {
     grid-template-columns: 1fr;
   }
 
+  .home-intro-title {
+    font-size: 1.55rem;
+  }
+
   .group-hero {
-    max-width: 36rem;
+    max-width: none;
+    margin: 0 0.75rem 0.75rem 0;
+  }
+
+  .group-hero::after {
+    left: 0.75rem;
+    top: 0.75rem;
+    right: -0.75rem;
+    bottom: -0.75rem;
+  }
+
+  .home-section {
+    padding: 2.25rem 0;
   }
 
   .home-pub-feature {
@@ -594,6 +648,16 @@ a:hover {
 
   .home-pub-side li {
     flex: none;
+  }
+
+  .pub-item {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 12px;
+  }
+
+  .pi-meta {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -663,7 +727,7 @@ a:hover {
 }
 
 .pub-even {
-  background-color: var(--silver);
+  background-color: #ffffff;
 }
 
 .pub-content-col {
@@ -854,7 +918,7 @@ a:hover {
 
 .lang-btn.active {
   background: #ffffff;
-  color: #000000;
+  color: #071F36;
 }
 
 /* Lang switch stays on the dark topbar on all breakpoints */
@@ -933,7 +997,7 @@ a:hover {
   margin: 0 0 0.25rem;
   font-size: 1.625rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #071F36;
 }
 
 .pi-title {
@@ -1336,7 +1400,7 @@ a:hover {
 .alumni-name {
   flex: 0 1 auto;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #071F36;
 }
 
 .alumni-meta {
@@ -1415,7 +1479,7 @@ a:hover {
   margin: 0 0 4px;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #071F36;
 }
 
 .person-link {
@@ -1521,7 +1585,7 @@ a:hover {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: linear-gradient(145deg, #e5e5e5, #f7f7f7);
+  background: linear-gradient(145deg, #e5e5e5, #ffffff);
 }
 
 .outing-photo img {
