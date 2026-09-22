@@ -6,12 +6,12 @@ One JSON file per paper in this folder. The site only shows **English** metadata
 
 ## Add a new paper
 
-1. Copy `template.json` → `your-slug.json` (e.g. `liu-2024-organic.json`).
-2. Fill the fields (see below). Put the cover image under `img/pubs/` and set `"image"`.
+1. Prefer `python tools/bibtex_to_json.py path\to\folder` (EndNote `.enw` → JSON, named `<surname>-<year>-<journal>.json`). Or copy `template.json` manually.
+2. Fill the fields (see below). Put the cover image under `img/journals/<id>.jpg`.
 3. Run:
 
 ```bash
-python scripts/rebuild-pubs-index.py
+python tools/rebuild_index.py
 ```
 
 This refreshes `index.json` (all `*.json` except `template.json` / `index.json`, newest year first).
@@ -22,17 +22,17 @@ This refreshes `index.json` (all `*.json` except `template.json` / `index.json`,
 
 | Field | Required | Notes |
 |-------|----------|--------|
-| `id` | yes | Unique slug; usually same as filename without `.json` |
+| `id` | yes | Same as filename without `.json` (`surname-year-journal`) |
 | `type` | yes | `"journal"` or `"preprint"` |
 | `year` | yes | Number, used for sorting |
 | `authors` | yes | English |
 | `title` | yes | English |
 | `citation` | yes | English venue line |
 | `doi` | no | Full URL preferred |
-| `image` | no | Path relative to site root, e.g. `img/pubs/foo.jpg`. Leave empty or omit → placeholder shown |
+| `image` | no | Cover path, e.g. `img/journals/<id>.jpg`. Missing file → Cover placeholder |
 | `abstract.en` / `abstract.zh` | no | Shown in the abstract overlay |
 | `bibtex` | no | Shown in the cite overlay |
 
 ## Image
 
-Reserve a cover with `"image": "img/pubs/<slug>.jpg"`. If the file is missing, the page shows a placeholder box until you add the image.
+Covers live in `img/journals/`, named after the paper `id`. Missing file → Cover placeholder.

@@ -6,7 +6,7 @@
   "title": "English title of the paper goes here",
   "citation": "Journal Name, 12 (2024): 123–145.",
   "doi": "https://doi.org/10.xxxx/xxxxx",
-  "image": "img/pubs/example-2024.jpg",
+  "image": "img/journals/example-2024-paper-slug.jpg",
   "abstract": {
     "en": "English abstract paragraph.",
     "zh": "中文摘要段落。"
