@@ -68,6 +68,7 @@
     if (titleKey && dict[titleKey]) document.title = dict[titleKey];
 
     if (window.MEH_syncPubAbstracts) window.MEH_syncPubAbstracts(lang);
+    if (window.MEH_syncPeopleLang) window.MEH_syncPeopleLang(lang);
 
     try {
       localStorage.setItem(STORAGE_KEY, lang);
@@ -93,17 +94,89 @@
   }
   applyLang(initial);
 
+  (function bindCvToggle() {
+    var btn = document.querySelector(".pi-cv-toggle");
+    var panel = document.getElementById("pi-cv");
+    if (!btn || !panel) return;
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+      panel.hidden = open;
+      if (!open) panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  })();
+
   if (window.MEH_loadPublications) {
     window.MEH_loadPublications().then(function () {
       if (window.MEH_updatePubCounts) window.MEH_updatePubCounts();
     });
   } else if (window.MEH_updatePubCounts) {
     window.MEH_updatePubCounts();
-  } else {
-    document.querySelectorAll("[data-empty-for]").forEach(function (el) {
-      var list = document.querySelector(el.getAttribute("data-empty-for"));
-      var n = list ? list.querySelectorAll(".pub-item, .person-card").length : 0;
-      el.hidden = n > 0;
-    });
   }
+
+  if (window.MEH_loadPeople) {
+    window.MEH_loadPeople();
+  }
+
+  (function loadHomePubs() {
+    var list = document.getElementById("home-pubs");
+    if (!list) return;
+
+    function esc(text) {
+      var d = document.createElement("div");
+      d.textContent = text == null ? "" : String(text);
+      return d.innerHTML;
+    }
+
+    fetch("data/highlights.json")
+      .then(function (res) { return res.json(); })
+      .then(function (entries) {
+        return Promise.all(entries.map(function (entry) {
+          var file = typeof entry === "string" ? entry : entry.file;
+          var figure = typeof entry === "string" ? "" : (entry.figure || "");
+          return fetch(file).then(function (res) { return res.json(); }).then(function (pub) {
+            pub.figure = figure;
+            return pub;
+          });
+        }));
+      })
+      .then(function (pubs) {
+        function itemHtml(pub) {
+          var title = esc(pub.title || "");
+          if (pub.doi) {
+            title = '<a href="' + esc(pub.doi) + '" target="_blank" rel="noopener">' + title + "</a>";
+          }
+          return (
+            "<li><p class=\"home-pub-title\">" + title + "</p>" +
+            '<p class="home-pub-meta">' + esc(pub.authors || "") + " " + esc(pub.citation || "") + "</p></li>"
+          );
+        }
+
+        var lead = pubs.slice(0, 3);
+        var rest = pubs.slice(3);
+        var first = lead[0] || {};
+        var image = (first.figure || "").trim();
+        var img = image ? '<img src="' + esc(image) + '" alt="" />' : "";
+        if (img && first.doi) {
+          img = '<a href="' + esc(first.doi) + '" target="_blank" rel="noopener">' + img + "</a>";
+        }
+        var figure = '<div class="home-pub-figure">' + img + "</div>";
+        var side = lead.map(itemHtml).join("");
+        var below = rest.map(itemHtml).join("");
+        list.innerHTML =
+          '<div class="home-pub-feature">' + figure +
+          '<ul class="home-pub-side">' + side + "</ul></div>" +
+          '<ul class="home-pub-list">' + below + "</ul>";
+      })
+      .catch(function () {
+        list.innerHTML = "";
+      });
+  })();
+
+  document.querySelectorAll("[data-empty-for]").forEach(function (el) {
+    var list = document.querySelector(el.getAttribute("data-empty-for"));
+    if (!list) return;
+    var n = list.querySelectorAll(".pub-item, .person-card").length;
+    el.hidden = n > 0;
+  });
 })();

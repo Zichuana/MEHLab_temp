@@ -1,0 +1,155 @@
+{
+  "pi": {
+    "name": { "zh": "张思宇", "en": "Si-Yu Zhang" },
+    "photo": "img/people/zhang-siyu-2.jpg",
+    "profile": "https://faculty.ecnu.edu.cn/_s31/zsy2/main.psp",
+    "bio": {
+      "zh": "生态系统微生物组学、微生物与污染物互作机制、胁迫环境下的微生物响应机制",
+        "en": "Ecosystem microbiomics, mechanisms of interaction between microorganisms and pollutants, and mechanisms of microbial responses under stress conditions"
+      }
+  },
+  "phd": [
+    {
+      "name": { "zh": "马锐骜", "en": "Rui-Ao Ma" },
+      "photo": "img/people/ma-ruiao.jpg",
+      "year": { "zh": "2022 级", "en": "2022 cohort" },
+      "topic": {
+        "zh": "叶际抗性组及潜在病原菌",
+        "en": "Phyllosphere resistome and potential pathogens"
+      }
+    },
+    {
+      "name": { "zh": "刘子腾", "en": "Zi-Teng Liu" },
+      "photo": "img/people/liu-ziteng.jpg",
+      "year": { "zh": "2023 级", "en": "2023 cohort" },
+      "topic": {
+        "zh": "农田土壤 ARGs 富集",
+        "en": "Enrichment of ARGs in agricultural soils"
+      }
+    },
+    {
+      "name": { "zh": "赵欣迪", "en": "Xin-Di Zhao" },
+      "photo": "img/people/zhao-xindi.jpg",
+      "year": { "zh": "2024 级", "en": "2024 cohort" },
+      "topic": {
+        "zh": "砷氧化还原耦合碳氮代谢过程",
+        "en": "Arsenic redox coupled with carbon–nitrogen metabolism"
+      }
+    },
+    {
+      "name": { "zh": "高紫雨", "en": "Zi-Yu Gao" },
+      "photo": "img/people/gao-ziyu.jpg",
+      "year": { "zh": "2025 级", "en": "2025 cohort" },
+      "topic": {
+        "zh": "砷甲基化与碳氮耦合代谢",
+        "en": "Arsenic methylation and coupled C–N metabolism"
+      }
+    },
+    {
+      "name": { "zh": "张鸿赛", "en": "Hong-Sai Zhang" },
+      "photo": "img/people/zhang-hongsai.jpg",
+      "year": { "zh": "2026 级", "en": "2026 cohort" },
+      "topic": {
+        "zh": "宏基因组识别病毒序列",
+        "en": "Identifying viral sequences from metagenomes"
+      }
+    },
+    {
+      "name": { "zh": "孟婷玮", "en": "Ting-Wei Meng" },
+      "photo": "img/people/meng-tinwei.jpg",
+      "year": { "zh": "2026 级", "en": "2026 cohort" },
+      "topic": {
+        "zh": "气候变化对抗性基因的影响",
+        "en": "Climate change impacts on antibiotic resistance genes"
+      }
+    },
+    {
+      "name": { "zh": "章沁怡", "en": "Qin-Yi Zhang" },
+      "photo": "img/people/zhang-qinyi.jpg",
+      "year": { "zh": "2026 级", "en": "2026 cohort" },
+      "topic": {
+        "zh": "城境遥感与微生物预测建模",
+        "en": "Urban remote sensing and microbial predictive modeling"
+      }
+    }
+  ],
+  "master": [
+    {
+      "name": { "zh": "黎舒心", "en": "Shu-Xin Li" },
+      "photo": "img/people/li-shuxin.jpg",
+      "year": { "zh": "2024 级", "en": "2024 cohort" },
+      "topic": {
+        "zh": "砷污染土壤病毒-宿主互作",
+        "en": "Virus–host interactions in arsenic-contaminated soils"
+      }
+    },
+    {
+      "name": { "zh": "潘悦", "en": "Yue Pan" },
+      "photo": "img/people/pan-yue.jpg",
+      "year": { "zh": "2024 级", "en": "2024 cohort" },
+      "topic": {
+        "zh": "土壤和叶际微生物组",
+        "en": "Soil and phyllosphere microbiomes"
+      }
+    },
+    {
+      "name": { "zh": "樊岑熠", "en": "Cen-Yi Fan" },
+      "photo": "img/people/fan-chenyi.jpg",
+      "year": { "zh": "2025 级", "en": "2025 cohort" },
+      "topic": {
+        "zh": "砷胁迫对土壤磷代谢影响",
+        "en": "Effects of arsenic stress on soil phosphorus metabolism"
+      }
+    },
+    {
+      "name": { "zh": "屈子祺", "en": "Zi-Qi Qu" },
+      "photo": "img/people/qu-ziqi.jpg",
+      "year": { "zh": "2026 级", "en": "2026 cohort" },
+      "topic": {
+        "zh": "有机质对土壤砷循环影响",
+        "en": "Effects of organic matter on soil arsenic cycling"
+      }
+    },
+    {
+      "name": { "zh": "赵掷艺", "en": "Zhi-Yi Zhao" },
+      "photo": "img/people/zhao-zhiyi.jpg",
+      "year": { "zh": "2026 级", "en": "2026 cohort" },
+      "topic": {
+        "zh": "稻田有机质与ARGs",
+        "en": "Organic matter and ARGs in paddy fields"
+      }
+    },
+    {
+      "name": { "zh": "陈雨珂", "en": "Yu-Ke Chen" },
+      "photo": "img/people/chen-yuke.jpg",
+      "year": { "zh": "2026 级", "en": "2026 cohort" },
+      "topic": {
+        "zh": "结核与底泥微生物功能",
+        "en": "Tuberculosis and sediment microbial functions"
+      }
+    }
+  ],
+  "alumni": [
+    {
+      "name": { "zh": "景婷婷", "en": "Ting-Ting Jing" },
+      "meta": {
+        "zh": "2023 级硕士毕业生",
+        "en": "2023 cohort master graduate"
+      }
+    },
+    {
+      "name": { "zh": "李嘉琪", "en": "Jia-Qi Li" },
+      "meta": {
+        "zh": "2023 级硕士毕业生",
+        "en": "2023 cohort master graduate"
+      }
+    },
+    {
+      "name": { "zh": "丁奕慧", "en": "Yi-Hui Ding" },
+      "meta": {
+        "zh": "2022 级硕士毕业生",
+        "en": "2022 cohort master graduate"
+      }
+    }
+  ]
+}
