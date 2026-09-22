@@ -846,6 +846,10 @@ a:hover {
   width: 100%;
 }
 
+.person-card--text {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .person-photo {
   position: relative;
   box-sizing: border-box;

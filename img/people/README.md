@@ -17,5 +17,7 @@ img/people/li-shuxin.jpg
 img/people/pan-yue.jpg
 ```
 
+Alumni entries do not use photos.
+
 Supported: `.jpg`, `.jpeg`, `.png`, `.webp`.
 If the file is missing, the page shows the photo placeholder.
