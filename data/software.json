@@ -1,0 +1,25 @@
+[
+  {
+    "title": {
+      "zh": "ROCker 模型（β-内酰胺酶短序列识别）",
+      "en": "ROCker models for β-lactamase short-read detection"
+    },
+    "desc": {
+      "zh": "基于高通量测序短序列精准识别功能基因（如抗生素抗性基因）的 ROCker 方法相关工作。",
+      "en": "ROCker-based approaches for reliable detection of functional genes (e.g., antibiotic resistance genes) from short sequencing reads."
+    },
+    "links": [
+      {
+        "label": "mSystems, 2022",
+        "url": "https://doi.org/10.1128/msystems.01281-21"
+      },
+      {
+        "label": {
+          "zh": "下载（这是一个测试）",
+          "en": "Download (This is a test)"
+        },
+        "url": "https://github.com/Zichuana/PepStrata/archive/refs/tags/v1.0.zip"
+      }
+    ]
+  }
+]

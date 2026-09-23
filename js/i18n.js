@@ -87,10 +87,6 @@ window.MEH_I18N = {
     peopleAlumni: "毕业生",
     alumniEmpty: "暂无，后续可补充已毕业成员。",
     softwareTitle: "软件与工具",
-    soft1Title: "ROCker 模型（β-内酰胺酶短序列识别）",
-    soft1Desc: "基于高通量测序短序列精准识别功能基因（如抗生素抗性基因）的 ROCker 方法相关工作。",
-    soft2Title: "宏基因组分析流程",
-    soft2Desc: "环境微生物组高通量识别与功能解析相关脚本与流程（占位，待补充仓库地址）。",
     teachingTitle: "教学和课件",
     undergradTitle: "本科生课程",
     gradTitle: "研究生课程",
@@ -207,12 +203,6 @@ window.MEH_I18N = {
     peopleAlumni: "Alumni",
     alumniEmpty: "No alumni listed yet — add former members here.",
     softwareTitle: "Software",
-    soft1Title: "ROCker models for β-lactamase short-read detection",
-    soft1Desc:
-      "ROCker-based approaches for reliable detection of functional genes (e.g., antibiotic resistance genes) from short sequencing reads.",
-    soft2Title: "Metagenomic analysis workflows",
-    soft2Desc:
-      "Scripts and pipelines for high-throughput identification and functional annotation of environmental microbiomes (placeholder — repository TBD).",
     teachingTitle: "Teaching & Slides",
     undergradTitle: "Undergraduate courses",
     gradTitle: "Graduate courses",

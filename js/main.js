@@ -69,6 +69,7 @@
 
     if (window.MEH_syncPubAbstracts) window.MEH_syncPubAbstracts(lang);
     if (window.MEH_syncPeopleLang) window.MEH_syncPeopleLang(lang);
+    if (window.MEH_syncSoftwareLang) window.MEH_syncSoftwareLang(lang);
 
     try {
       localStorage.setItem(STORAGE_KEY, lang);
@@ -116,6 +117,10 @@
 
   if (window.MEH_loadPeople) {
     window.MEH_loadPeople();
+  }
+
+  if (window.MEH_loadSoftware) {
+    window.MEH_loadSoftware();
   }
 
   (function loadHomePubs() {
