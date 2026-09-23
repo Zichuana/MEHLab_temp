@@ -1,6 +1,6 @@
 /* Load publication cards from publications/*.json via publications/index.json */
 (function () {
-  var INDEX_URL = "publications/index.json";
+  var DATA_URL = "publications/all.json";
 
   function esc(text) {
     var d = document.createElement("div");
@@ -35,6 +35,7 @@
         '<img src="' +
         esc(image) +
         '" alt="" class="pub-thumb" ' +
+        'loading="lazy" decoding="async" ' +
         "onload=\"this.closest('.pub-thumbnail-col').hidden=false\" " +
         "onerror=\"this.closest('.pub-thumbnail-col').remove()\" />" +
         "</div></div>";
@@ -197,31 +198,20 @@
 
     bindFilters();
 
-    return fetch(INDEX_URL)
+    return fetch(DATA_URL)
       .then(function (r) {
-        if (!r.ok) throw new Error("Cannot load " + INDEX_URL);
+        if (!r.ok) throw new Error("Cannot load " + DATA_URL);
         return r.json();
       })
-      .then(function (files) {
-        if (!Array.isArray(files) || !files.length) {
-          mount([]);
-          return;
-        }
-        return Promise.all(
-          files.map(function (name) {
-            return fetch("publications/" + name).then(function (r) {
-              if (!r.ok) throw new Error("Cannot load publications/" + name);
-              return r.json();
-            });
-          })
-        ).then(mount);
+      .then(function (pubs) {
+        mount(Array.isArray(pubs) ? pubs : []);
       })
       .catch(function (err) {
         console.error(err);
         var journalEl = document.getElementById("journal-pub-list");
         if (journalEl) {
           journalEl.innerHTML =
-            '<li class="pub-load-error">Failed to load publications. Please open the site via a local HTTP server (not file://) and check publications/index.json.</li>';
+            '<li class="pub-load-error">Failed to load publications. Please open the site via a local HTTP server (not file://) and check publications/all.json.</li>';
         }
         updateCounts();
       });

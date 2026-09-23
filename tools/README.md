@@ -33,4 +33,5 @@ python tools/rebuild_index.py
 ```
 
 Scans all publication JSON files and rewrites `publications/index.json`
-sorted by date (year, newest first; missing year last).
+and `publications/all.json`, sorted by date (year, newest first; missing year last).
+The site reads `all.json`.

@@ -15,7 +15,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUB_DIR = ROOT / "publications"
 INDEX = PUB_DIR / "index.json"
-SKIP = {"index.json", "template.json"}
+BUNDLE = PUB_DIR / "all.json"
+SKIP = {"index.json", "template.json", "all.json"}
 
 
 def parse_year(value: object) -> int:
@@ -42,19 +43,18 @@ def rebuild_index(*, quiet: bool = False) -> list[dict]:
             continue
         year = parse_year(data.get("year"))
         title = str(data.get("title") or "")
-        entries.append({"file": path.name, "year": year, "title": title})
+        entries.append({"file": path.name, "year": year, "title": title, "data": data})
 
     # Newest date first; no year → last; same year → title A–Z
     entries.sort(key=lambda e: (-e["year"], e["title"].lower()))
 
-    INDEX.write_text(
-        json.dumps([e["file"] for e in entries], indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-        newline="\n",
-    )
+    payload_index = json.dumps([e["file"] for e in entries], indent=2, ensure_ascii=False) + "\n"
+    payload_bundle = json.dumps([e["data"] for e in entries], indent=2, ensure_ascii=False) + "\n"
+    INDEX.write_text(payload_index, encoding="utf-8")
+    BUNDLE.write_text(payload_bundle, encoding="utf-8")
 
     if not quiet:
-        print(f"Wrote {INDEX.relative_to(ROOT)} ({len(entries)} papers)\n")
+        print(f"Wrote {INDEX.relative_to(ROOT)} and {BUNDLE.relative_to(ROOT)} ({len(entries)} papers)\n")
         for e in entries:
             year = e["year"] if e["year"] else "????"
             print(f"  {year}  {e['file']}")

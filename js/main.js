@@ -133,19 +133,33 @@
       return d.innerHTML;
     }
 
-    fetch("data/highlights.json")
-      .then(function (res) { return res.json(); })
-      .then(function (entries) {
-        return Promise.all(entries.map(function (entry) {
-          var file = typeof entry === "string" ? entry : entry.file;
-          var figure = typeof entry === "string" ? "" : (entry.figure || "");
-          return fetch(file).then(function (res) { return res.json(); }).then(function (pub) {
-            pub.figure = figure;
-            return pub;
-          });
-        }));
-      })
-      .then(function (pubs) {
+    function readJson(url) {
+      return fetch(url).then(function (res) {
+        if (!res.ok) throw new Error(url);
+        return res.json();
+      });
+    }
+
+    Promise.all([
+      readJson("data/highlights.json"),
+      readJson("publications/all.json")
+    ]).then(function (pair) {
+      var entries = pair[0] || [];
+      var byId = {};
+      (pair[1] || []).forEach(function (pub) {
+        if (pub && pub.id) byId[pub.id] = pub;
+      });
+      return entries.map(function (entry) {
+        var file = typeof entry === "string" ? entry : entry.file;
+        var figure = typeof entry === "string" ? "" : (entry.figure || "");
+        var id = String(file || "").split("/").pop().replace(/\.json$/, "");
+        var pub = Object.assign({}, byId[id] || {});
+        pub.figure = figure;
+        return pub;
+      }).filter(function (pub) {
+        return pub.title;
+      });
+    }).then(function (pubs) {
         function itemHtml(pub) {
           var title = esc(pub.title || "");
           if (pub.doi) {

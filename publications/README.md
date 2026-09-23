@@ -14,7 +14,7 @@ One JSON file per paper in this folder. The site only shows **English** metadata
 python tools/rebuild_index.py
 ```
 
-This refreshes `index.json` (all `*.json` except `template.json` / `index.json`, newest year first).
+This refreshes `index.json` and `all.json` (all `*.json` except `template.json`, `index.json`, and `all.json`, newest year first). The publications page loads `all.json` in one request.
 
 4. Refresh `publications.html` (serve over `http://`, not `file://`).
 
