@@ -27,14 +27,18 @@
     var absId = "abs-" + id;
     var bibId = "bib-" + id;
 
-    var thumbHtml =
-      '<div class="pub-thumb-frame">' +
-      (image
-        ? '<img src="' +
-          esc(image) +
-          '" alt="" class="pub-thumb" onerror="this.remove()" />'
-        : "") +
-      '<span class="pub-thumb-placeholder">Cover</span></div>';
+    var thumbHtml = "";
+    if (image) {
+      thumbHtml =
+        '<div class="pub-thumbnail-col" hidden>' +
+        '<div class="pub-thumb-frame">' +
+        '<img src="' +
+        esc(image) +
+        '" alt="" class="pub-thumb" ' +
+        "onload=\"this.closest('.pub-thumbnail-col').hidden=false\" " +
+        "onerror=\"this.closest('.pub-thumbnail-col').remove()\" />" +
+        "</div></div>";
+    }
 
     var actions = "";
     if (doi) {
@@ -105,9 +109,7 @@
       '" data-pub-id="' +
       esc(id) +
       '">' +
-      '<div class="pub-thumbnail-col">' +
       thumbHtml +
-      "</div>" +
       '<div class="pub-content-col">' +
       '<p class="pub-authors">' +
       esc(pub.authors || "") +
