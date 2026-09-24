@@ -7,6 +7,7 @@ window.MEH_I18N = {
     navPubs: "论文",
     navSoftware: "软件",
     navTeaching: "教学",
+    navBases: "实验基地",
     navOutings: "活动",
     introTitle: "课题组简介",
     introP1:
@@ -28,6 +29,7 @@ window.MEH_I18N = {
     projectsTitle: "科研项目",
     recentPubsTitle: "近期代表研究",
     allPubs: "全部论文 →",
+    allBases: "查看实验基地 →",
     project1: "国家自然科学基金青年项目（B类），2026.01–2028.12，主持。",
     project2: "国家自然科学基金面上项目，2023.01–2026.12，主持。",
     project3: "国家自然科学基金青年项目（C类），2022.01–2024.12，主持。",
@@ -42,7 +44,7 @@ window.MEH_I18N = {
     bibTitle: "BibTeX 引用",
     photoPlaceholder: "照片",
     piName: "张思宇",
-    piTitle: "教授（紫江青年学者）",
+    piTitle: "教授",
     piDept: "华东师范大学 · 生态与环境科学学院",
     piLab: "课题组：微生物组学与生态系统健康（MEH Lab）",
     piLabShort: "微生物组学与生态系统健康",
@@ -97,11 +99,16 @@ window.MEH_I18N = {
     outingsTitle: "课题组活动",
     outing1Title: "上海迪士尼",
     outing2Title: "跨年组会",
+    outing3Title: "天际森谷",
+    outing4Title: "暑期学习",
+    basesTitle: "实验基地",
+    basesEmpty: "暂无实验基地。",
     pageTitleHome: "MEH Lab — 微生物组学与生态系统健康",
     pageTitlePeople: "成员 — MEH Lab",
     pageTitlePublications: "论文 — MEH Lab",
     pageTitleSoftware: "软件 — MEH Lab",
     pageTitleTeaching: "教学 — MEH Lab",
+    pageTitleBases: "实验基地 — MEH Lab",
     pageTitleOutings: "活动 — MEH Lab"
   },
   en: {
@@ -111,6 +118,7 @@ window.MEH_I18N = {
     navPubs: "Publications",
     navSoftware: "Software",
     navTeaching: "Teaching",
+    navBases: "Experimental Bases",
     navOutings: "Outings",
     introTitle: "Introduction",
     introP1:
@@ -134,6 +142,7 @@ window.MEH_I18N = {
     projectsTitle: "Research Projects",
     recentPubsTitle: "Recent Representative Research",
     allPubs: "All publications →",
+    allBases: "View experimental bases →",
     project1:
       "National Natural Science Foundation of China Young Scientists Fund (Category B), Jan 2026–Dec 2028, PI.",
     project2:
@@ -153,7 +162,7 @@ window.MEH_I18N = {
     bibTitle: "BibTeX Citation",
     photoPlaceholder: "Photo",
     piName: "Si-Yu Zhang",
-    piTitle: "Professor (Zijiang Young Scholar)",
+    piTitle: "Professor",
     piDept: "East China Normal University · School of Ecological and Environmental Sciences",
     piLab: "Group: Microbiome & Ecosystem Health (MEH Lab)",
     piLabShort: "Microbiome & Ecosystem Health",
@@ -171,7 +180,7 @@ window.MEH_I18N = {
       "B.S. in Agricultural Resources and Environment, Nanjing Agricultural University",
     workTitle: "Professional Experience",
     work1Date: "Nov 2020 – present",
-    work1Text: "Professor (Zijiang Young Scholar), East China Normal University",
+    work1Text: "Professor, East China Normal University",
     work2Date: "Aug 2017 – Oct 2020",
     work2Text: "Postdoctoral Fellow, Georgia Institute of Technology, USA",
     work3Date: "Jul 2015 – Jul 2017",
@@ -213,11 +222,16 @@ window.MEH_I18N = {
     outingsTitle: "Outings & Events",
     outing1Title: "Shanghai Disneyland",
     outing2Title: "New Year group meeting",
+    outing3Title: "Tianji Forest Park",
+    outing4Title: "Summer Study",
+    basesTitle: "Experimental Bases",
+    basesEmpty: "No experimental bases yet.",
     pageTitleHome: "MEH Lab — Microbiome & Ecosystem Health",
     pageTitlePeople: "People — MEH Lab",
     pageTitlePublications: "Publications — MEH Lab",
     pageTitleSoftware: "Software — MEH Lab",
     pageTitleTeaching: "Teaching — MEH Lab",
+    pageTitleBases: "Experimental Bases — MEH Lab",
     pageTitleOutings: "Outings — MEH Lab"
   }
 };

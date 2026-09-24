@@ -1,0 +1,28 @@
+[
+  {
+    "id": "example-base",
+    "name": {
+      "zh": "水稻实验基地",
+      "en": "Rice Experimental Base"
+    },
+    "location": {
+      "zh": "上海市金山区友好村",
+      "en": "Youhao Village, Jinshan District, Shanghai"
+    },
+    "desc": {
+      "zh": "在田间真实环境下，对比秸秆还田、不同化肥、生物调节剂、不施肥这几类管理方式，观测水稻生长、产量、土壤养分、微生物等指标差异，评估不同施肥/培肥方案的农田效应。",
+      "en": "In the field under real conditions, we compare the differences in rice growth, yield, soil nutrients, and microbial indicators between straw return, different fertilizers, biological regulators, and no fertilization. We evaluate the农田效应 of different fertilization/fertilization schemes."
+    },
+    "images": [
+      "img/bases/1.jpg",
+      "img/bases/2.jpg",
+      "img/bases/3.jpg",
+      "img/bases/4.jpg",
+      "img/bases/5.jpg",
+      "img/bases/6.jpg",
+      "img/bases/7.jpg",
+      "img/bases/8.jpg",
+      "img/bases/9.jpg"
+    ]
+  }
+]

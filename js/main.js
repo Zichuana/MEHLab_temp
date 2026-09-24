@@ -63,6 +63,7 @@
       publications: "pageTitlePublications",
       software: "pageTitleSoftware",
       teaching: "pageTitleTeaching",
+      bases: "pageTitleBases",
       outings: "pageTitleOutings"
     }[page];
     if (titleKey && dict[titleKey]) document.title = dict[titleKey];
@@ -70,6 +71,8 @@
     if (window.MEH_syncPubAbstracts) window.MEH_syncPubAbstracts(lang);
     if (window.MEH_syncPeopleLang) window.MEH_syncPeopleLang(lang);
     if (window.MEH_syncSoftwareLang) window.MEH_syncSoftwareLang(lang);
+    if (window.MEH_syncBasesLang) window.MEH_syncBasesLang(lang);
+    if (window.MEH_syncHomeBasesLang) window.MEH_syncHomeBasesLang(lang);
 
     try {
       localStorage.setItem(STORAGE_KEY, lang);
@@ -121,6 +124,10 @@
 
   if (window.MEH_loadSoftware) {
     window.MEH_loadSoftware();
+  }
+
+  if (window.MEH_loadBases) {
+    window.MEH_loadBases();
   }
 
   (function loadHomePubs() {
@@ -189,6 +196,95 @@
       })
       .catch(function () {
         list.innerHTML = "";
+      });
+  })();
+
+  (function loadHomeBases() {
+    var el = document.getElementById("home-bases");
+    var caption = document.getElementById("home-bases-caption");
+    if (!el) return;
+
+    var cached = null;
+
+    function esc(text) {
+      var d = document.createElement("div");
+      d.textContent = text == null ? "" : String(text);
+      return d.innerHTML;
+    }
+
+    function pick(field, lang) {
+      if (!field) return "";
+      if (typeof field === "string") return field;
+      return (lang === "zh" ? field.zh : field.en) || field.zh || field.en || "";
+    }
+
+    function mount(list, lang) {
+      var base = (list || [])[0];
+      if (!base) {
+        el.innerHTML = "";
+        if (caption) {
+          caption.hidden = true;
+          caption.innerHTML = "";
+        }
+        return;
+      }
+      var images = (base.homeImages || base.images || []).filter(Boolean).slice(0, 2);
+      if (!images.length) {
+        el.innerHTML = "";
+        if (caption) {
+          caption.hidden = true;
+          caption.innerHTML = "";
+        }
+        return;
+      }
+      el.innerHTML = images
+        .map(function (src) {
+          return (
+            '<a class="home-base-shot" href="bases.html">' +
+            '<div class="home-base-photo">' +
+            '<img src="' +
+            esc(src) +
+            '" alt="" onerror="this.remove()" />' +
+            '<span class="home-base-photo-fallback"></span>' +
+            "</div></a>"
+          );
+        })
+        .join("");
+      if (caption) {
+        var location = pick(base.location, lang);
+        var name = pick(base.name, lang);
+        if (location || name) {
+          caption.hidden = false;
+          caption.innerHTML = location
+            ? '<span class="contact-icon">📍</span> ' + esc(location)
+            : esc(name);
+        } else {
+          caption.hidden = true;
+          caption.innerHTML = "";
+        }
+      }
+    }
+
+    window.MEH_syncHomeBasesLang = function (lang) {
+      if (!cached) return;
+      mount(cached, lang || document.body.getAttribute("data-lang") || "zh");
+    };
+
+    fetch("data/bases.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("bases.json");
+        return res.json();
+      })
+      .then(function (list) {
+        cached = Array.isArray(list) ? list : [];
+        mount(cached, document.body.getAttribute("data-lang") || "zh");
+      })
+      .catch(function () {
+        el.innerHTML = "";
+        if (caption) {
+          caption.hidden = true;
+          caption.innerHTML = "";
+        }
       });
   })();
 

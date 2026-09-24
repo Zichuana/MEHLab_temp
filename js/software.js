@@ -18,18 +18,22 @@
   function renderCard(item, lang) {
     var links = (item.links || [])
       .filter(function (link) {
-        return link && link.url;
+        return link && pick(link.label, lang);
       })
       .map(function (link) {
-        return (
-          '<a href="' +
-          esc(link.url) +
-          '" target="_blank" rel="noopener">' +
-          esc(pick(link.label, lang)) +
-          "</a>"
-        );
-      })
-      .join("");
+        var label = esc(pick(link.label, lang));
+        var url = (link.url || "").trim();
+        if (url) {
+          return (
+            '<a class="content-meta-link" href="' +
+            esc(url) +
+            '" target="_blank" rel="noopener">' +
+            label +
+            "</a>"
+          );
+        }
+        return '<span class="content-meta-pending">' + label + "</span>";
+      });
 
     return (
       '<article class="content-card">' +
@@ -39,7 +43,11 @@
       "<p>" +
       esc(pick(item.desc, lang)) +
       "</p>" +
-      (links ? '<p class="content-meta">' + links + "</p>" : "") +
+      (links.length
+        ? '<div class="content-meta">' +
+          links.join('<span class="content-meta-sep">;</span>') +
+          "</div>"
+        : "") +
       "</article>"
     );
   }

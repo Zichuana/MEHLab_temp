@@ -1,6 +1,60 @@
 [
   {
     "title": {
+      "zh": "砷代谢基因数据库",
+      "en": "ArsenicGene Databases"
+    },
+    "desc": {
+      "zh": "本仓库包含砷（As）代谢基因数据库，包括 aioA、arxA、arrA、arsC1、arsC2、arsM、arsI 和 arsP 基因。",
+      "en": "This repository contains arsenic (As) metabolism gene databases, including aioA, arxA, arrA, arsC1, arsC2, arsM, arsI, and arsP genes."
+    },
+    "links": [
+      {
+        "label": "Microbiome, 2024",
+        "url": "https://doi.org/10.1186/s40168-024-01952-4"
+      },
+      {
+        "label": "Environmental science & technology, 2025",
+        "url": "https://doi.org/10.1021/acs.est.4c08620"
+      },
+      {
+        "label": {
+          "zh": "下载",
+          "en": "Download"
+        },
+        "url": ""
+      }
+    ]
+  },
+  {
+    "title": {
+      "zh": "砷代谢基因 ROCker 模型",
+      "en": "ArsenicGene ROCker Models"
+    },
+    "desc": {
+      "zh": "本仓库包含用于高通量测序短序列精准识别砷代谢基因的 ROCker 模型，覆盖 aioA、arxA、arrA、arsC1、arsC2、arsM、arsI 和 arsP 基因。",
+      "en": "This repository contains ROCker models for accurate detection of arsenic metabolism genes from short sequencing reads, covering aioA, arxA, arrA, arsC1, arsC2, arsM, arsI, and arsP."
+    },
+    "links": [
+      {
+        "label": "Microbiome, 2024",
+        "url": "https://doi.org/10.1186/s40168-024-01952-4"
+      },
+      {
+        "label": "Environmental science & technology, 2025",
+        "url": "https://doi.org/10.1021/acs.est.4c08620"
+      },
+      {
+        "label": {
+          "zh": "下载",
+          "en": "Download"
+        },
+        "url": ""
+      }
+    ]
+  },
+  {
+    "title": {
       "zh": "ROCker 模型（β-内酰胺酶短序列识别）",
       "en": "ROCker models for β-lactamase short-read detection"
     },
@@ -15,10 +69,10 @@
       },
       {
         "label": {
-          "zh": "下载（这是一个测试）",
-          "en": "Download (This is a test)"
+          "zh": "下载",
+          "en": "Download"
         },
-        "url": "https://github.com/Zichuana/PepStrata/archive/refs/tags/v1.0.zip"
+        "url": ""
       }
     ]
   }
